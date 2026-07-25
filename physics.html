@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Physics Calculator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+<h1>⚛ Physics Formula Calculator</h1>
+<p>Select a Calculator</p>
+</header>
+
+<div class="container">
+
+<div class="card">
+<h2>Force Calculator</h2>
+<input type="number" id="mass" placeholder="Mass (kg)">
+<br><br>
+<input type="number" id="acc" placeholder="Acceleration (m/s²)">
+<br><br>
+<button onclick="force()">Calculate</button>
+<h3 id="forceResult"></h3>
+</div>
+
+<div class="card">
+<h2>Velocity Calculator</h2>
+<input type="number" id="distance" placeholder="Distance (m)">
+<br><br>
+<input type="number" id="time" placeholder="Time (s)">
+<br><br>
+<button onclick="velocity()">Calculate</button>
+<h3 id="velocityResult"></h3>
+</div>
+
+<div class="card">
+<h2>Work Calculator</h2>
+<input type="number" id="f" placeholder="Force (N)">
+<br><br>
+<input type="number" id="d" placeholder="Distance (m)">
+<br><br>
+<button onclick="work()">Calculate</button>
+<h3 id="workResult"></h3>
+</div>
+
+<div class="card">
+<h2>Power Calculator</h2>
+<input type="number" id="work1" placeholder="Work (J)">
+<br><br>
+<input type="number" id="time1" placeholder="Time (s)">
+<br><br>
+<button onclick="power()">Calculate</button>
+<h3 id="powerResult"></h3>
+</div>
+
+<div class="card">
+<h2>Kinetic Energy</h2>
+<input type="number" id="m" placeholder="Mass (kg)">
+<br><br>
+<input type="number" id="v" placeholder="Velocity (m/s)">
+<br><br>
+<button onclick="ke()">Calculate</button>
+<h3 id="keResult"></h3>
+</div>
+
+</div>
+
+<div style="text-align:center;margin:30px;">
+<button onclick="window.location.href='index.html'">⬅ Back Home</button>
+</div>
+
+<script>
+function force(){
+let m=Number(document.getElementById("mass").value);
+let a=Number(document.getElementById("acc").value);
+document.getElementById("forceResult").innerHTML="Force = "+(m*a)+" N";
+}
+
+function velocity(){
+let d=Number(document.getElementById("distance").value);
+let t=Number(document.getElementById("time").value);
+document.getElementById("velocityResult").innerHTML="Velocity = "+(d/t).toFixed(2)+" m/s";
+}
+
+function work(){
+let f=Number(document.getElementById("f").value);
+let d=Number(document.getElementById("d").value);
+document.getElementById("workResult").innerHTML="Work = "+(f*d)+" J";
+}
+
+function power(){
+let w=Number(document.getElementById("work1").value);
+let t=Number(document.getElementById("time1").value);
+document.getElementById("powerResult").innerHTML="Power = "+(w/t).toFixed(2)+" W";
+}
+
+function ke(){
+let m=Number(document.getElementById("m").value);
+let v=Number(document.getElementById("v").value);
+document.getElementById("keResult").innerHTML="Kinetic Energy = "+(0.5*m*v*v).toFixed(2)+" J";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BEEE Calculator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+<h1>⚡ BEEE Formula Calculator</h1>
+<p>Electrical Engineering Calculators</p>
+</header>
+
+<div class="container">
+
+<div class="card">
+<h2>Ohm's Law</h2>
+<input type="number" id="voltage" placeholder="Voltage (V)">
+<br><br>
+<input type="number" id="current" placeholder="Current (A)">
+<br><br>
+<button onclick="ohms()">Calculate Resistance</button>
+<h3 id="ohmsResult"></h3>
+</div>
+
+<div class="card">
+<h2>Electrical Power</h2>
+<input type="number" id="v1" placeholder="Voltage (V)">
+<br><br>
+<input type="number" id="i1" placeholder="Current (A)">
+<br><br>
+<button onclick="power()">Calculate</button>
+<h3 id="powerResult"></h3>
+</div>
+
+<div class="card">
+<h2>Current</h2>
+<input type="number" id="volt2" placeholder="Voltage (V)">
+<br><br>
+<input type="number" id="res2" placeholder="Resistance (Ω)">
+<br><br>
+<button onclick="currentCal()">Calculate</button>
+<h3 id="currentResult"></h3>
+</div>
+
+<div class="card">
+<h2>Voltage</h2>
+<input type="number" id="curr3" placeholder="Current (A)">
+<br><br>
+<input type="number" id="res3" placeholder="Resistance (Ω)">
+<br><br>
+<button onclick="voltageCal()">Calculate</button>
+<h3 id="voltageResult"></h3>
+</div>
+
+<div class="card">
+<h2>Resistance</h2>
+<input type="number" id="volt4" placeholder="Voltage (V)">
+<br><br>
+<input type="number" id="curr4" placeholder="Current (A)">
+<br><br>
+<button onclick="resistanceCal()">Calculate</button>
+<h3 id="resistanceResult"></h3>
+</div>
+
+</div>
+
+<div style="text-align:center;margin:30px;">
+<button onclick="window.location.href='index.html'">⬅ Back Home</button>
+</div>
+
+<script>
+function ohms(){
+let v=Number(document.getElementById("voltage").value);
+let i=Number(document.getElementById("current").value);
+document.getElementById("ohmsResult").innerHTML="Resistance = "+(v/i).toFixed(2)+" Ω";
+}
+
+function power(){
+let v=Number(document.getElementById("v1").value);
+let i=Number(document.getElementById("i1").value);
+document.getElementById("powerResult").innerHTML="Power = "+(v*i).toFixed(2)+" W";
+}
+
+function currentCal(){
+let v=Number(document.getElementById("volt2").value);
+let r=Number(document.getElementById("res2").value);
+document.getElementById("currentResult").innerHTML="Current = "+(v/r).toFixed(2)+" A";
+}
+
+function voltageCal(){
+let i=Number(document.getElementById("curr3").value);
+let r=Number(document.getElementById("res3").value);
+document.getElementById("voltageResult").innerHTML="Voltage = "+(i*r).toFixed(2)+" V";
+}
+
+function resistanceCal(){
+let v=Number(document.getElementById("volt4").value);
+let i=Number(document.getElementById("curr4").value);
+document.getElementById("resistanceResult").innerHTML="Resistance = "+(v/i).toFixed(2)+" Ω";
+}
+</script>
+
+</body>
+</html>

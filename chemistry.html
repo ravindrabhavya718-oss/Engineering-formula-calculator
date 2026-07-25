@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chemistry Calculator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+<h1>🧪 Chemistry Formula Calculator</h1>
+<p>Chemistry Engineering Calculators</p>
+</header>
+
+<div class="container">
+
+<div class="card">
+<h2>Molarity</h2>
+<input type="number" id="moles" placeholder="Moles">
+<br><br>
+<input type="number" id="liters" placeholder="Volume (L)">
+<br><br>
+<button onclick="molarity()">Calculate</button>
+<h3 id="molarityResult"></h3>
+</div>
+
+<div class="card">
+<h2>pH Calculator</h2>
+<input type="number" id="hion" placeholder="[H+] (Example: 0.001)">
+<br><br>
+<button onclick="ph()">Calculate</button>
+<h3 id="phResult"></h3>
+</div>
+
+<div class="card">
+<h2>Dilution</h2>
+<input type="number" id="m1" placeholder="M1">
+<br><br>
+<input type="number" id="v1" placeholder="V1">
+<br><br>
+<input type="number" id="v2" placeholder="V2">
+<br><br>
+<button onclick="dilution()">Calculate</button>
+<h3 id="dilutionResult"></h3>
+</div>
+
+<div class="card">
+<h2>Mass</h2>
+<input type="number" id="density" placeholder="Density">
+<br><br>
+<input type="number" id="volume" placeholder="Volume">
+<br><br>
+<button onclick="mass()">Calculate</button>
+<h3 id="massResult"></h3>
+</div>
+
+<div class="card">
+<h2>Density</h2>
+<input type="number" id="mass1" placeholder="Mass">
+<br><br>
+<input type="number" id="volume1" placeholder="Volume">
+<br><br>
+<button onclick="density()">Calculate</button>
+<h3 id="densityResult"></h3>
+</div>
+
+</div>
+
+<div style="text-align:center;margin:30px;">
+<button onclick="window.location.href='index.html'">⬅ Back Home</button>
+</div>
+
+<script>
+
+function molarity(){
+let n=Number(document.getElementById("moles").value);
+let v=Number(document.getElementById("liters").value);
+document.getElementById("molarityResult").innerHTML="Molarity = "+(n/v).toFixed(2)+" M";
+}
+
+function ph(){
+let h=Number(document.getElementById("hion").value);
+document.getElementById("phResult").innerHTML="pH = "+(-Math.log10(h)).toFixed(2);
+}
+
+function dilution(){
+let M1=Number(document.getElementById("m1").value);
+let V1=Number(document.getElementById("v1").value);
+let V2=Number(document.getElementById("v2").value);
+document.getElementById("dilutionResult").innerHTML="M2 = "+((M1*V1)/V2).toFixed(2);
+}
+
+function mass(){
+let d=Number(document.getElementById("density").value);
+let v=Number(document.getElementById("volume").value);
+document.getElementById("massResult").innerHTML="Mass = "+(d*v).toFixed(2);
+}
+
+function density(){
+let m=Number(document.getElementById("mass1").value);
+let v=Number(document.getElementById("volume1").value);
+document.getElementById("densityResult").innerHTML="Density = "+(m/v).toFixed(2);
+}
+
+</script>
+
+</body>
+</html>
