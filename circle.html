@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Area of Circle</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+<h1>Area of Circle Calculator</h1>
+</header>
+
+<div class="card" style="width:400px;margin:40px auto;">
+<h2>Calculate Area</h2>
+
+<input type="number" id="radius" placeholder="Enter Radius">
+
+<br><br>
+
+<button onclick="calculate()">Calculate</button>
+
+<h2 id="result"></h2>
+
+<br>
+
+<button onclick="window.location.href='math.html'">⬅ Back</button>
+
+</div>
+
+<script>
+function calculate(){
+let r=document.getElementById("radius").value;
+let area=3.14159*r*r;
+document.getElementById("result").innerHTML="Area = "+area.toFixed(2);
+}
+</script>
+
+</body>
+</html>

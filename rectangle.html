@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Rectangle</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+<h1>Rectangle Area Calculator</h1>
+</header>
+
+<div class="card" style="width:400px;margin:40px auto;">
+
+<input type="number" id="l" placeholder="Length"><br><br>
+
+<input type="number" id="b" placeholder="Breadth"><br><br>
+
+<button onclick="cal()">Calculate</button>
+
+<h2 id="ans"></h2>
+
+<br>
+
+<button onclick="window.location.href='math.html'">⬅ Back</button>
+
+</div>
+
+<script>
+function cal(){
+let l=document.getElementById("l").value;
+let b=document.getElementById("b").value;
+
+document.getElementById("ans").innerHTML="Area = "+(l*b);
+}
+</script>
+
+</body>
+</html>
