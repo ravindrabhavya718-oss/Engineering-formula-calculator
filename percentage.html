@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Percentage Calculator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>📊 Percentage Calculator</h1>
+<p>Calculate Percentage Easily</p>
+</header>
+
+<div class="container">
+
+<div class="card">
+<h2>Percentage Calculator</h2>
+
+<input type="number" id="obtained" placeholder="Obtained Marks">
+<br><br>
+
+<input type="number" id="total" placeholder="Total Marks">
+<br><br>
+
+<button onclick="calculatePercentage()">Calculate</button>
+
+<h3 id="result"></h3>
+
+</div>
+
+</div>
+
+<div style="text-align:center;margin:30px;">
+<button onclick="window.location.href='math.html'">⬅ Back to Mathematics</button>
+</div>
+
+<script>
+function calculatePercentage(){
+
+let obtained = Number(document.getElementById("obtained").value);
+let total = Number(document.getElementById("total").value);
+
+if(total<=0){
+document.getElementById("result").innerHTML="Enter a valid Total Marks";
+return;
+}
+
+let percentage=(obtained/total)*100;
+
+document.getElementById("result").innerHTML=
+"Percentage = "+percentage.toFixed(2)+" %";
+
+}
+</script>
+
+</body>
+</html>
