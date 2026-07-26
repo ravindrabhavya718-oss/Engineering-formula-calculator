@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CGPA Calculator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>🎓 CGPA Calculator</h1>
+<p>Calculate Your CGPA</p>
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h2>CGPA Calculator</h2>
+
+<input type="number" id="g1" placeholder="Semester 1 GPA">
+<br><br>
+
+<input type="number" id="g2" placeholder="Semester 2 GPA">
+<br><br>
+
+<input type="number" id="g3" placeholder="Semester 3 GPA">
+<br><br>
+
+<input type="number" id="g4" placeholder="Semester 4 GPA">
+<br><br>
+
+<button onclick="calculateCGPA()">Calculate</button>
+
+<h3 id="cgpaResult"></h3>
+
+</div>
+
+</div>
+
+<div style="text-align:center;margin:30px;">
+<button onclick="window.location.href='math.html'">⬅ Back to Mathematics</button>
+</div>
+
+<script>
+function calculateCGPA(){
+
+let g1=Number(document.getElementById("g1").value);
+let g2=Number(document.getElementById("g2").value);
+let g3=Number(document.getElementById("g3").value);
+let g4=Number(document.getElementById("g4").value);
+
+let cgpa=(g1+g2+g3+g4)/4;
+
+document.getElementById("cgpaResult").innerHTML=
+"CGPA = "+cgpa.toFixed(2);
+
+}
+</script>
+
+</body>
+</html>
