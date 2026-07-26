@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple Interest Calculator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>💰 Simple Interest Calculator</h1>
+<p>Calculate Simple Interest Easily</p>
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h2>Simple Interest</h2>
+
+<input type="number" id="principal" placeholder="Principal Amount (₹)">
+<br><br>
+
+<input type="number" id="rate" placeholder="Rate of Interest (%)">
+<br><br>
+
+<input type="number" id="time" placeholder="Time (Years)">
+<br><br>
+
+<button onclick="calculateSI()">Calculate</button>
+
+<h3 id="siResult"></h3>
+
+</div>
+
+</div>
+
+<div style="text-align:center;margin:30px;">
+<button onclick="window.location.href='math.html'">⬅ Back to Mathematics</button>
+</div>
+
+<script>
+function calculateSI(){
+
+let p = Number(document.getElementById("principal").value);
+let r = Number(document.getElementById("rate").value);
+let t = Number(document.getElementById("time").value);
+
+let si = (p * r * t) / 100;
+let total = p + si;
+
+document.getElementById("siResult").innerHTML =
+"Simple Interest = ₹" + si.toFixed(2) +
+"<br>Total Amount = ₹" + total.toFixed(2);
+
+}
+</script>
+
+</body>
+</html>
